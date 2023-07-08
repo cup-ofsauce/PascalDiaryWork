@@ -48,6 +48,7 @@ Program DiaryProject;
                  END;
     DocumentFileType = FILE OF DocumentRec;
 
+  // Comment this please
 
   VAR
 
