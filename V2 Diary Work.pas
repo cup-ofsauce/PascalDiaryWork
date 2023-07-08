@@ -48,7 +48,6 @@ Program DiaryProject;
                  END;
     DocumentFileType = FILE OF DocumentRec;
 
-  // Comment this please
 
   VAR
 
@@ -113,9 +112,13 @@ Program DiaryProject;
       BEGIN
         RESET(DiaryFile);
         WRITELN('enter Date to search for in the from dd/mm/yy');
-        readln(DateSearch);
-        DateSearch:=STRTODATE(StrDate);
+        // wrong code as StrDate not initialised yet so can't use it
+        //readln(DateSearch);
+        //DateSearch:=STRTODATE(StrDate);
+        READLN(StrDate);
+        DateSearch := STRTODATE(StrDate);  // Convert string to date
         Found:=False;
+        
         IF FILESIZE(DiaryFile)=0 THEN
           WRITELN('the file is empty')
         else
